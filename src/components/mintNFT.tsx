@@ -93,7 +93,7 @@ export function MintNFT() {
         chainId: 1,
       });
 
-      const mechaSupplyString = mechaSupply?.toString() || '';
+      const mechaSupplyString = mechaSupply?.toString() || '9000';
 
 
       const {write, data: writeData, error: writeError } = useContractWrite(prepareConfig)
@@ -113,7 +113,7 @@ export function MintNFT() {
               />
               <div style={divStyle}>Price: {priceToMint}  </div>
               <div style={divStyle}>Total Supply: {totalSupplyString}</div>
-              <div style={divStyle}>Contract Metadata: {mechaSupply}</div>
+              <div style={divStyle}>Contract Metadata: {mechaSupplyString}</div>
         <button
         //   disabled={isLoading}
           onClick={() => write?.()}
