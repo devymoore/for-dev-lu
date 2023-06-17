@@ -14,9 +14,22 @@ function App({ Component, pageProps }: AppProps) {
     <WagmiConfig config={config}>
       <ConnectKitProvider theme="minimal">
         <NextHead>
-          <title>Caisson</title>
+          <title>Felt NFTs Minting Page</title>
         </NextHead>
-
+		<div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: '-1',        
+        backgroundImage: 'url("https://media.giphy.com/media/PeLjyjkmRpowbuqHJj/giphy.gif")',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+		    //backgroundColor: 'transparent',
+        backgroundColor: 'rgba(0, 0, 0, 0)', // Adjust the alpha value (0.5) for transparency
+      }}></div>          
         {mounted ? <Component {...pageProps} /> : <div />}
       </ConnectKitProvider>
     </WagmiConfig>

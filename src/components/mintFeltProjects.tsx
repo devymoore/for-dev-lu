@@ -11,14 +11,12 @@ import { MintFeltProject } from "./mintFeltProject";
 
 export function MintFeltProjects() {
   return (
-    <div>
-      <h2>House Plants</h2>
+    <div>      
       <MintFeltProject
         abi={housePlantsABI}
         prepareWrite={usePrepareHousePlantsGrowPlants}
         address={housePlantsAddress[mainnet.id]}
       />
-      <h2>MechaFutures</h2>
       <MintFeltProject
         // temporarily make look like house plants
         abi={mechaFuturesABI as any}
