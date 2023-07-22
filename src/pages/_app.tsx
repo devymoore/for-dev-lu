@@ -6,6 +6,25 @@ import * as React from "react";
 import { WagmiConfig } from "wagmi";
 import { config } from "../wagmi";
 
+function setTwitterCardMetadata() {
+  const twitterCardMetaTags = [
+    { name: 'twitter:card', content: 'Intersections' },
+    { name: 'twitter:title', content: 'Intersections by FeltZine' },
+    { name: 'twitter:description', content: 'What if we kissed at the intersection of?' },
+    { name: 'twitter:image', content: 'https://i.ibb.co/X8qTzXJ/27.png' },
+    { name: 'twitter:url', content: 'clouds.feltzine.art' },
+  ];
+
+  twitterCardMetaTags.forEach((metaTag) => {
+    const tag = document.createElement('meta');
+    tag.setAttribute('name', metaTag.name);
+    tag.setAttribute('content', metaTag.content);
+    document.head.appendChild(tag);
+  });
+}
+
+setTwitterCardMetadata();
+
 function App({ Component, pageProps }: AppProps) {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => setMounted(true), []);
@@ -14,7 +33,7 @@ function App({ Component, pageProps }: AppProps) {
     <WagmiConfig config={config}>
       <ConnectKitProvider theme="minimal">
         <NextHead>
-          <title>Clouds By Felt Zine</title>
+          <title>Intersections By Felt Zine</title>
         </NextHead>
         <div
 		style={{
@@ -24,9 +43,10 @@ function App({ Component, pageProps }: AppProps) {
 			width: '100%',
 			height: '100%',
 			zIndex: '-1',        
-			backgroundImage: 'url("https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExMTljZGRjZTgwZWE2ZTQxMzVjODU2OTBjMTI4YzdlMzY2MjkxYmU2ZCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/ylXLBVdhuyQKeVHiWC/giphy.gif")',
+			backgroundImage: 'url("https://i.ibb.co/C5BKzgS/felt-pic.png")',  //https://i.ibb.co/X8qTzXJ/27.png"
 			backgroundRepeat: 'no-repeat',
 			backgroundSize: 'cover',
+      backgroundPosition: 'center',
 				//backgroundColor: 'transparent',
 			backgroundColor: 'rgba(0, 0, 0, 0)', // Adjust the alpha value (0.5) for transparency
 		}}></div>                  

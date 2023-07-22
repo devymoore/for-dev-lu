@@ -32,13 +32,13 @@ export function MintZORANFT({ address }: { address: Address }) {
     padding: '10px',
     boxShadow: '0 2px 5px rgba(0, 0, 0, 0.3)',
     backgroundImage: 'linear-gradient(to bottom, #f8f8f8, #e1e1e1)',
-    background: "cornflowerblue",
+    background: "black",
     color: "white",
     outline: 'none',
     transition: 'box-shadow 0.3s ease-in-out',
-    width: '200px',
-    height: '100px',
-    fontSize: '2em',    
+    width: '600px',
+    height: '50px',
+    fontSize: '1em',    
   };
 
   const divStyle: React.CSSProperties = {
